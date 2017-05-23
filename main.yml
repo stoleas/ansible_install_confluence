@@ -10,7 +10,7 @@
     - name: Create confluence directories
       file:
         path="{{item.PATH}}" state=directory
-      with-items:
+      with_items:
         - { PATH: "{{ATLAS_PATH}}"   }
         - { PATH: "{{CONF_WAR_DIR}}" }
         - { PATH: "{{CONF_HOME}}"    }
