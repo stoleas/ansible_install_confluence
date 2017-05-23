@@ -1,0 +1,6 @@
+---
+CONF_ARTI: https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-6.1.4.tar.gz
+CONF_VERS: atlassian-confluence-6.1.4
+ATLAS_PATH: /opt/atlassian
+CONF_WAR_DIR: /opt/atlassian/confluence
+CONF_HOME: /opt/atlassian/confluence-home

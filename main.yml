@@ -1,0 +1,24 @@
+---
+- hosts: all
+  tasks:
+    - include_vars: vars/main.yml
+
+    - name: Install openJDK 1.8
+      apt:
+        name="openjdk-8-jre" state=present
+
+    - name: Create confluence directories
+      file:
+        path="{{item.PATH}}" state=directory
+      with-items:
+        - { PATH: "{{ATLAS_PATH}}"   }
+        - { PATH: "{{CONF_WAR_DIR}}" }
+        - { PATH: "{{CONF_HOME}}"    }
+
+    - name: Download Confluence Artifact
+      get_url:
+        url="{{CONF_ARTI}}" dest="{{ATLAS_PATH}}/{{CONF_VERS}}.tgz"
+
+    - name: Unpack Confluence Artifact
+      unarchive:
+        src="{{ATLAS_PATH}}/{{CONF_VERS}}.tgz" dest="{{ATLAS_PATH}}/{{CONF_VERS}}"
