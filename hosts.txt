@@ -1,2 +1,2 @@
 [hosts]
-10.27.102.11 ansible_ssh_port=2222 ansible_ssh_user=root
+10.0.2.15 ansible_ssh_port=2222 ansible_ssh_user=root
