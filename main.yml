@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: hosts
   tasks:
     - include_vars: vars/main.yml
 
